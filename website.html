@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+      <head>
+        <title>MindBoot</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <style>
+body,h1,h2,h3,h4,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image:url("Img/home.jpg");
+  min-height: 100%;
+}
+
+/* Second image (Resources) */
+.bgimg-2 {
+  background-image: url("Img/Resources.jpg");
+ background-size: 1200px ;
+}
+
+/* Third image (SELF-HELP) */
+.bgimg-3 {
+  background-image: url("Img/Self-help.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+.svg{
+  -webkit-transition: all 150ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+}
+
+button {
+  position: relative;
+  //display:block;
+  height: 45px;
+  width: 150px;
+  margin: 1px 7px;
+  padding: 5px 5px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #383736;
+  border: 2px #383736 solid;
+  border-radius: 4px;
+  text-transform: uppercase;
+  outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+  transition:         0.08s ease-in;
+  -o-transition:      0.08s ease-in;
+  -ms-transition:     0.08s ease-in;
+  -moz-transition:    0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
+}
+.slide:after{
+  content:"Quiz";
+  position:absolute;
+  width:100%;
+  height:100%;
+  left:0;
+  text-align:center;
+  -webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+}
+
+.slide:before {
+  content:"Click to Start";
+  height:100%;
+  width:100%;
+  position:absolute;
+  color:#383736;
+  left:-100%;
+  opacity: 0;
+  -webkit-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+}
+
+.slide:hover{
+  background:#383736;
+}
+
+.slide:hover:before{
+  left:0;
+  opacity:1;
+  color:#fff;
+}
+.slide:hover:after{
+  left:100%;
+  opacity:0;
+}
+
+.slide.left:hover{
+  background:none;
+}
+
+.slide.left:before {
+  left:100%;
+  color:#383736;
+  -webkit-transition: all 425ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+}
+
+.slide.left:hover:before{
+  left:0;
+}
+
+
+</style>
+      </head>
+      <body>
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+          <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()"
+            title="Toggle Navigation Menu">
+              <i class="fa fa-bars"></i></a>
+            <b><a href="#home" class="w3-bar-item w3-button"><font color="#28282B" style="font-size:18px;">HOME</font></a>
+            <a href="#preface" class="w3-bar-item w3-button w3-hide-small"><font color="#28282B" style="font-size:18px;">PREFACE</font></a>
+            <a href="#quiz" class="w3-bar-item w3-button"><font color="#28282B" style="font-size:18px;">QUIZ</font></a>
+            <a href="#resources" class="w3-bar-item w3-button w3-hide-small"><font color="#28282B" style="font-size:18px;">RESOURCES</font></a>
+            <a href="#self-help" class="w3-bar-item w3-button w3-hide-small"><font color="#28282B" style="font-size:18px;">SELF-HELP</font></a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+               <font color="white" style="font-family:Georgia;font-size:18px;"><i><b>MindBoot</b></i></font></a>
+            </b>
+            </div>
+        </div>
+
+        <!-- First Parallax Image with Logo Text -->
+        <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+          <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MINDBOOT</span>
+          </div>
+        </div>
+        
+        <!-- Container (About Section) -->
+        <div class="w3-content w3-container w3-padding-64" id="preface">
+          <h3 class="w3-center">PREFACE</h3>
+          <p class="w3-center"><em>MindBoot</em></p>
+          <p>Mental health,as defined by WHO(World Health Organization), is "state of well-being in which the individual realizes his/her abilities,
+          copes up with normal stresses of life working productively and fruitfully and can contribute to his/her community". It is the capacity of an
+          individual to feel, think and act in a certain way keeping in mind personal,social and cultural boundaries that are attached. Mental health 
+          surrounds emotional, psychological and social well-being.All over the world mental health problems are most commonly faced by students in higher 
+          education, hence a system for identification of those who are at higher risk and allowing the targeted provision of help can create a difference 
+          in mental health status all over. </p>
+        
+          <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+              <img src="Img/Preface.jpg" class="w3-round w3-image"  width="500" height="100">
+            </div>
+        
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6 w3-hide-small w3-padding-large">
+              <p><center><b><i>Significance of Mental Health</i></b></center><br>
+        
+        Mental health is important. It impacts how we feel, think, and behave each day. Our mental health also contributes to our decision making, problem 
+        solving, how we deal with stress, and how we can relate to others in our lives. That's why, we have to always care about our own mental health. 
+        It's for the sake of our social well-being. Our mental health plays an important part on a daily basis, promoting productivity in activities like
+        work, school, etc. If you adapt easily to new environments, then it means both your mental and emotional health are healthy.
+        <br><br><br>
+        <b><i>Check Your Mental Health with a quick quiz.</i></b>
+
+         <div class="w3-content w3-container w3-padding-64" id="quiz">
+         <center><button class="slide">&nbsp;</button></center>
+         </div>
+            </div>
+          </div>
+         </p>
+
+         <br>
+        <div class="w3-row w3-center w3-dark-grey w3-padding-14">
+          <div class="w3-quarter w3-section">
+            <h2 align=center>Resources</h2>
+          </div>
+         </div>
+        <!-- Second Parallax Image with Resources Text -->
+        <div class="bgimg-2 w3-display-container w3-opacity-min">
+         </div>
+        
+        <!-- Container (Resources Section) -->
+        <div class="w3-content w3-container w3-padding-64" id="resources">
+          <h3 class="w3-center">ARTICLES AND PROFESSIONAL ADVICES</h3>
+          <p class="w3-center"><i>Here are some articles.</i></p>
+          <br>
+          <p><b>1."Mental illness is like any other medical illness": a critical examination of the statement and its impact on patient care and society
+          by Ashok Malla, MBBS, MRCPsych, Ridha Joober, MD, PhD, and Amparo Garcia, MA, MPPPA</b>
+            <br>  The nature of mental illness has been the subject of passionate discussion throughout history. In ancient Greece Plato promoting
+            a mentalist definition of mental illness, was the first to coin the term "mental health," which was conceived as reason aided by temper and
+            ruling over passion. At around the same time, Hippocrates,taking a more physicalist approach, defined different mental conditions as a
+            variety of imbalances between different kinds of "humours." Griesinger almost 2 centuries ago was the first to state that "mental illness
+            is brain illness," an expression that has provided a strong impetus to the more recent medical conception of mental illness.
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4409431/"><font color="blue"><b>read more...</b></font></a>
+            <br>
+          <p><b>2.The potential of virtual reality to support adolescent mental well-being in schools: A UK co-design and proof-of-concept study by Siobhan
+          Hugh-Jones, Michelle Ulor, Trish Nugent, Sophie Walshe, Mike Kirk</b>
+            <br>  Mental health interventions delivered via virtual reality (VR) technology are available for treatment of adult anxiety and phobias.
+            VR for other mental health needs is now being explored. A small number of studies have examined VR acceptability and helpfulness for 
+            adolescents in conjunction with clinician support. No studies have examined the potential of VR to support adolescents in schools as a
+            form of prevention. We present our early-stage work to produce and field-test a youth co-designed VR intervention for use in schools to 
+            support adolescent well-being. Co-design decisions led to a focus on stress reduction via emotion regulation, supported by a
+            mindfulness-based approach.
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4409431/"><font color="blue"><b>read more...</b></font></a>
+
+        </div>
+        
+        
+        <!-- Third Parallax Image with Resources Text -->
+        <div class="bgimg-3 w3-display-container w3-opacity-min">
+          <div class="w3-display-middle">
+             <span class="w3-xxlarge w3-text-white w3-wide">SELF-HELP</span>
+          </div>
+        </div>
+
+        <!-- Container (SELF-HELP Section) -->
+        <div class="w3-content w3-container w3-padding-64" id="self-help">
+        <div class="w3-row w3-center w3-dark-grey w3-padding-14">
+          <h2 style="text-align:center">Yoga asana improvement of mental health</h2>
+          <p style="text-align:justify">
+        </div>
+        <br>
+        1.<b>Sukhasana(happy pose)</b>
+        <br><br>
+        <center><img src="Img/sukhasana.jpg" height=400 width=600></center>
+        <br>
+        Method: Place your palms on your knees, make the Siddha Mudra, and sit up straight in Dandasana with both legs extended. Fold the left leg and 
+        tuck it inside the right thigh. Finally, fold the right leg and tuck it inside the left thigh.
+        <br><br>
+        2.<b>Chakrasana</b>
+        <br><br>
+        <center><img src="Img/Chakrasana.jpg" height=400 width=600></center>
+        <br>
+        Method: Lay on your back. Ensure that your feet are firmly planted on the ground and bend your knees. Position your palms upward while bending 
+        your arms at the elbows. Put your palms on the floor on either side of your head and rotate your arms at the shoulders. Take a deep breath in, 
+        apply pressure to your legs and palms, and raise your entire body in an arch. Allow your head to softly droop behind you as you look back and 
+        relax your neck. All four of your limbs should equally bear the weight of your body. Maintain the position for 15 to 20 seconds.
+        <br><br>
+        3.<b>Balasana(child's pose)</b>
+        <br><br>
+        <center><img src="Img/Balasana.jpg" height=400 width=600></center>
+        <br>
+        Method: Kneel on the mat and place your heels there. Breathe in and raise your arms above your head. Breathe out and bend your upper body forward.
+        Put your forehead on the floor. Your pelvis should rest on your heels. Watch out for a rounded back.
+        <br><br>
+        4.<b>Paschimottanasana</b>
+        <br><br>
+        <center><img src="Img/Paschimottanasana.jpg" height=400 width=600></center>
+        <br><br>
+        Method: Begin by assuming Dandasana. Make sure your knees are slightly bent and your legs are stretched out in front of you. Raise your arms 
+        upward while keeping your spine straight. With an exhale, bend forward at the hips to place your upper body on your lower body. Grip your big 
+        toes with your fingers. Try to touch your knees with your nose. Hold the position for 30 seconds.
+        <br><br>
+        </p>
+
+        <div class="w3-row w3-center w3-dark-grey w3-padding-14">
+        <h2 style="text-align:center">Music Thearpy</h2>
+        </div>
+          <p style="text-align:justify">
+          Music has powerful effects on the mind. Different styles of music can have a significant effect on a person's mood very quickly, and it can
+          help them experience and process a wide range of emotions, from happiness to excitement, as well as sadness, calmness, and thoughtfulness. 
+          Music therapy involves using a person's responses and connections to music to encourage positive changes in mood and overall well-being.
+          Music therapy can include creating music with instruments of all types, singing, moving to music, or just listening to it.
+          <br><br>
+          <h3><b>How it is important for Anxiety</b></h3>
+          Some studies suggest that music can reduce blood pressure and the heartbeat, which can have a direct impact on how stressed a person feels.
+          Music affects the amount of stress hormones, such as adrenaline and cortisol, that the body releases, and reducing these hormones can help
+          relieve symptoms of anxiety.
+          </p>
+          <h3><b>How it is important for Depression</b></h3>
+          Studies suggest that music therapy can improve symptoms of depression, with those undergoing music therapy along with standard treatments for
+          depression. Listening to music can also release dopamine, which is a hormone that makes people feel good, and endorphins, which are hormones
+          that can induce happy moods and relieve pain. Although music therapy is not a cure for depression, it can offer short-term benefits Trusted 
+          Source by improving mood and encouraging connection and self-expression.
+          </p>
+        </div>
+
+        <!-- Footer -->
+<footer class="w3-center w3-black w3-padding-44 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-large w3-section">
+  <p align="left" style="font-size:12px;"><b><i>Credits</i></b>
+  <br>
+  Home: Photo by <a href="https://unsplash.com/@jeremythomasphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeremy Thomas</a>
+  on <a href="https://unsplash.com/photos/FO7bKvgETgQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  <br>
+  Preface: Photo by <a href="https://unsplash.com/@finnnyc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Finn</a> on
+  <a href="https://unsplash.com/photos/nJupV3AOP-U?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  <br>
+  Resources: Photo by <a href="https://unsplash.com/@helloimnik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nik</a> on
+  <a href="https://unsplash.com/photos/z1d-LP8sjuI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  <br>
+  Self-Help: Photo by <a href="https://unsplash.com/@danielmingookkim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daniel Mingook Kim
+  </a> on <a href="https://unsplash.com/photos/UXR--t8CZ1U?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  <br>
+  Yoga-1: Photo by
+  <a href="https://www.freepik.com/free-photo/young-woman-doing-lotus-exercise_3955331.htm#query=Sukhasana&position=8&from_view=search&track=sph">
+  yanalya</a> on <a href="https://www.freepik.com">Freepik</a>
+  <br>
+  Yoga-2: Photo by
+  <a href="https://www.freepik.com/free-photo/young-woman-doing-bridge-exercise_3955054.htm#query=Chakrasana&position=1&from_view=search&track=sph">
+  yanalya</a> on <a href="https://www.freepik.com">Freepik</a>
+  <br>
+  Yoga-3: Photo by
+  <a href="https://www.freepik.com/free-photo/young-woman-doing-child-exercise_3955337.htm#query=Balasana&position=1&from_view=search&track=sph">
+  yanalya</a> on <a href="https://www.freepik.com">Freepik</a>
+  <br>
+  Yoga-4: Photo by
+  <a href="https://www.freepik.com/free-photo/young-yogi-woman-paschimottanasana-pose-with-block-loft-back_1282106.htm#query=Paschimottanasana&position=1&from_view=search&track=sph">
+  yanalya</a> on <a href="https://www.freepik.com">Freepik</a>
+  <br>
+  <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank">w3.css</a>
+  </p>
+  </div>
+
+</footer>
+
+        <script>
+        // Modal Image Gallery
+        function onClick(element) {
+          document.getElementById("img01").src = element.src;
+          document.getElementById("modal01").style.display = "block";
+          var captionText = document.getElementById("caption");
+          captionText.innerHTML = element.alt;
+        }
+        
+        // Change style of navbar on scroll
+        window.onscroll = function() {myFunction()};
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-gray";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-gray", "");
+            }
+        }
+        
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+        </script>
+      
+      </body>
+</html>
