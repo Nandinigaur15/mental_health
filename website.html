@@ -128,6 +128,61 @@ button {
   left:0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
 
 </style>
       </head>
@@ -143,7 +198,8 @@ button {
             <a href="#quiz" class="w3-bar-item w3-button"><font color="#28282B" style="font-size:18px;">QUIZ</font></a>
             <a href="#resources" class="w3-bar-item w3-button w3-hide-small"><font color="#28282B" style="font-size:18px;">RESOURCES</font></a>
             <a href="#self-help" class="w3-bar-item w3-button w3-hide-small"><font color="#28282B" style="font-size:18px;">SELF-HELP</font></a>
-            <a href="https://forms.gle/KXHRmYgoYnBXh1CLA" target="_blank" class="w3-bar-item w3-button w3-hide-small"><font color="#28282B" style="font-size:18px;">SURVEY</font></a>
+            <a href="https://forms.gle/KXHRmYgoYnBXh1CLA" target="_blank" class="w3-bar-item w3-button w3-hide-small">
+            <font color="#28282B" style="font-size:18px;">SURVEY</font></a>
             <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
                <font color="white" style="font-family:Georgia;font-size:18px;"><i><b>MindBoot</b></i></font></a>
             </b>
@@ -292,10 +348,48 @@ button {
           <h3><b>How it is important for Depression</b></h3>
           Studies suggest that music therapy can improve symptoms of depression, with those undergoing music therapy along with standard treatments for
           depression. Listening to music can also release dopamine, which is a hormone that makes people feel good, and endorphins, which are hormones
-          that can induce happy moods and relieve pain. Although music therapy is not a cure for depression, it can offer short-term benefits Trusted 
+          that can induce happy moods and relieve pain. Although music therapy is not a cure for depression, it can offer short-term benefits Trusted
           Source by improving mood and encouraging connection and self-expression.
           </p>
         </div>
+        
+        <div class="container">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>For any queries,leave us a message:</p>
+  </div>
+  <div class="row">
+      <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <br>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <br>
+        <label for="lname">Last Name</label>
+        <br>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <br>
+        <label for="country">Country</label>
+        <br>
+        <select id="country" name="country">
+          <option value="india">India</option>
+          <option value="china">South Korea</option>
+          <option value="china">Italy</option>
+          <option value="china">China</option>
+          <option value="usa">USA</option>
+        </select>
+        <br>
+        <label for="queries">Queries</label>
+        <br>
+        <textarea id="queries" name="queries" placeholder="Write your queries.." style="height:170px"></textarea>
+        <br>
+        <input type="submit" value="Submit">
+        <br>
+      </form>
+    </div>
+  </div>
+</div>
+
 
         <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-44 w3-opacity w3-hover-opacity-off">
